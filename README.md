@@ -28,7 +28,7 @@ URL 단축 서비스는 긴 URL을 짧게 단축하여 사용하고, 단축된 U
 ## **수행 내역(Description)**
 
 ### 1-1 **단축 URL 생성**
-<img src="/Users/emhaki/Desktop/MEMENTO/img/shorten2.png" alt="Swagger API" width="300">  
+<img src="MEMENTO/img/shorten2.png" alt="Swagger API" width="300">  
 
 - 요청 본문: {"url": "<original_url>"}
 - 응답 본문: {"short_url": "<shortened_url>"}
@@ -67,7 +67,7 @@ URL 단축 서비스는 긴 URL을 짧게 단축하여 사용하고, 단축된 U
 
 
 - **문서화**: 작성한 API에 대한 Swagger 문서 생성.
-<img src="/Users/emhaki/Desktop/MEMENTO/img/swagger.png" alt="Swagger API" width="300">
+<img src="MEMENTO/img/swagger.png" alt="Swagger API" width="300">
 
 ```python
 {
