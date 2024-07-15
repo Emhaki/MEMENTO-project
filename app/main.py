@@ -32,10 +32,6 @@ def delete_expired_urls_job():
     finally:
         db.close()
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
 @app.post("/shorten", response_model=schemas.URLResponse)
 def shorten_url(url: str, expiration_time: int = None, db: Session = Depends(get_db)):
     db_url = crud.create_url(db=db, url=url, expires_at=expiration_time)
