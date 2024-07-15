@@ -28,13 +28,13 @@ URL 단축 서비스는 긴 URL을 짧게 단축하여 사용하고, 단축된 U
 ## **수행 내역(Description)**
 
 ### 1-1 **단축 URL 생성**
-<img src="MEMENTO/img/shorten2.png" alt="Swagger API" width="300">  
+<img src="img/shorten2.png" alt="Swagger API" width="300">  
 
 - 요청 본문: {"url": "<original_url>"}
 - 응답 본문: {"short_url": "<shortened_url>"}
 
 - 과제 수행 내역
-<img src="/Users/emhaki/Desktop/MEMENTO/img/shorten_response.png" alt="Swagger API" width="300">
+<img src="img/shorten_response.png" alt="Swagger API" width="300">
 
     - string.ascii_letters + string.digits를 사용하여 문자, 숫자 조합
     - length를 통해 문자열 길이 쉽게 조정 가능
@@ -43,14 +43,14 @@ URL 단축 서비스는 긴 URL을 짧게 단축하여 사용하고, 단축된 U
 
 ### 1-2 **원본 URL 리디렉션**
 
-<img src="/Users/emhaki/Desktop/MEMENTO/img/redirection.png" alt="Swagger API" width="300">
+<img src="img/redirection.png" alt="Swagger API" width="300">
 
 - 과제 수행 내역
-    - <img src="/Users/emhaki/Desktop/MEMENTO/img/redirection2.png" alt="Swagger API" width="300">
+    - <img src="img/redirection2.png" alt="Swagger API" width="300">
     - 단축키 입력시 원본 URL 리디렉션
-    - <img src="/Users/emhaki/Desktop/MEMENTO/img/redirection_404.png" alt="Swagger API" width="300">
+    - <img src="img/redirection_404.png" alt="Swagger API" width="300">
     - 키가 존재하지 않으면 404 반환
-    - <img src="/Users/emhaki/Desktop/MEMENTO/img/success.png" alt="Swagger API" width="300">
+    - <img src="img/success.png" alt="Swagger API" width="300">
     - 키가 존재하면 원본 URL 반환
     
 ----
@@ -67,7 +67,7 @@ URL 단축 서비스는 긴 URL을 짧게 단축하여 사용하고, 단축된 U
 
 
 - **문서화**: 작성한 API에 대한 Swagger 문서 생성.
-<img src="MEMENTO/img/swagger.png" alt="Swagger API" width="300">
+<img src="img/swagger.png" alt="Swagger API" width="300">
 
 ```python
 {
@@ -275,16 +275,16 @@ URL 단축 서비스는 긴 URL을 짧게 단축하여 사용하고, 단축된 U
 - 키 생성 시 만료 기간을 지정할 수 있으며, 만료된 키는 삭제 처리.
 - `POST /shorten`: 요청 본문에 만료 기간을 선택적으로 추가할 수 있어야 함.
 
-<img src="/Users/emhaki/Desktop/MEMENTO/img/shorten2.png" alt="Swagger API" width="300">
-<img src="/Users/emhaki/Desktop/MEMENTO/img/expires.png" alt="Swagger API" width="300">
-<img src="/Users/emhaki/Desktop/MEMENTO/img/delete.png" alt="Swagger API" width="300">
+<img src="img/shorten2.png" alt="Swagger API" width="300">
+<img src="img/expires.png" alt="Swagger API" width="300">
+<img src="img/delete.png" alt="Swagger API" width="300">
 
 - 만료기간 설정한 후 만료시간이 지난 키는 스케줄러를 이용해 삭제 처리
 
 **2. 통계 기능**
 - 각 단축 키의 조회 수를 추적하고 이를 반환하는 통계 엔드포인트 추가.
 - `GET /stats/<short_key>`: 해당 키의 조회 수 반환.
-<img src="/Users/emhaki/Desktop/MEMENTO/img/count.png" alt="Swagger API" width="300">
+<img src="img/count.png" alt="Swagger API" width="300">
 - 단축 키의 조회 횟수를 DB에 저장하고 반환 stats/<short_key> 앤드포인트를 통해 반환
 
 **3. 테스트 코드**
