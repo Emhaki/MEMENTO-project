@@ -33,9 +33,8 @@ URL 단축 서비스는 긴 URL을 짧게 단축하여 사용하고, 단축된 U
 - 요청 본문: {"url": "<original_url>"}
 - 응답 본문: {"short_url": "<shortened_url>"}
 
-- 과제 수행 내역
-<img src="img/shorten_response.png" alt="Swagger API" width="300">
-
+- 과제 수행 내역   
+   <img src="img/shorten_response.png" alt="Swagger API" width="300">
     - string.ascii_letters + string.digits를 사용하여 문자, 숫자 조합
     - length를 통해 문자열 길이 쉽게 조정 가능
     - 단축 URL 중복값이 있다면 DB에 저장하지 않고 재생성
@@ -45,17 +44,17 @@ URL 단축 서비스는 긴 URL을 짧게 단축하여 사용하고, 단축된 U
 
 <img src="img/redirection.png" alt="Swagger API" width="300">
 
-- 과제 수행 내역
-    - <img src="img/redirection2.png" alt="Swagger API" width="300">
-    - 단축키 입력시 원본 URL 리디렉션
-    - <img src="img/redirection_404.png" alt="Swagger API" width="300">
-    - 키가 존재하지 않으면 404 반환
-    - <img src="img/success.png" alt="Swagger API" width="300">
-    - 키가 존재하면 원본 URL 반환
+- 과제 수행 내역   
+    <img src="img/redirection2.png" alt="Swagger API" width="300">   
+    단축키 입력시 원본 URL 리디렉션   
+    <img src="img/redirection_404.png" alt="Swagger API" width="300">   
+    키가 존재하지 않으면 404 반환   
+    <img src="img/success.png" alt="Swagger API" width="300">   
+    키가 존재하면 원본 URL 반환   
     
 ----
 
-**2. 추가 요구사항**
+## **2. 추가 요구사항**
 - **데이터베이스**: 원본 URL과 단축 키 매핑을 저장하기 위한 데이터베이스 사용. (여러 개의 데이터베이스를 혼합적으로 사용해도 됨)
   - SQLite, PostgreSQL, MongoDB, Redis 등 자유롭게 선택 가능.
   - 단, 확장성과 애플리케이션의 특성, 관리의 용이성을 종합적으로 고려해서 가장 적절한 데이터베이스(들)를 선택하여야 하고, 그 사유를 간략히 과제 제출 시 기재. 유저의 수가 많아질 수 있음을 반드시 고려해서 DB 스택을 설계해야함.
@@ -273,17 +272,15 @@ URL 단축 서비스는 긴 URL을 짧게 단축하여 사용하고, 단축된 U
 ### 보너스 기능 (각 기능 구현 시 가산점)
 **1. URL 키 만료 기능**
 - 키 생성 시 만료 기간을 지정할 수 있으며, 만료된 키는 삭제 처리.
-- `POST /shorten`: 요청 본문에 만료 기간을 선택적으로 추가할 수 있어야 함.
-
-<img src="img/shorten2.png" alt="Swagger API" width="300">
-<img src="img/expires.png" alt="Swagger API" width="300">
-<img src="img/delete.png" alt="Swagger API" width="300">
+- `POST /shorten`: 요청 본문에 만료 기간을 선택적으로 추가할 수 있어야 함.   
+<img src="img/shorten2.png" alt="Swagger API" width="300"><img src="img/expires.png" alt="Swagger API" width="300"><img src="img/delete.png" alt="Swagger API" width="300">
 
 - 만료기간 설정한 후 만료시간이 지난 키는 스케줄러를 이용해 삭제 처리
 
 **2. 통계 기능**
 - 각 단축 키의 조회 수를 추적하고 이를 반환하는 통계 엔드포인트 추가.
 - `GET /stats/<short_key>`: 해당 키의 조회 수 반환.
+<img src="img/count_url.png" alt="Swagger API" width="300">
 <img src="img/count.png" alt="Swagger API" width="300">
 - 단축 키의 조회 횟수를 DB에 저장하고 반환 stats/<short_key> 앤드포인트를 통해 반환
 
